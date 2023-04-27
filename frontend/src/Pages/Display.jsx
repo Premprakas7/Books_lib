@@ -15,9 +15,10 @@ const Display = () => {
   return (
     <div>
         {loading && <div>...loading</div>}
-        {
-            
-        }
+        {data?.map((e)=><div key={e.id} className='text-lg italic font-semibold border'>
+          <p key={e.id}>Book : {e.title}</p>
+          <p key={e.id}> Author :{e.author}</p>
+        </div>)}
       
     </div>
   )
