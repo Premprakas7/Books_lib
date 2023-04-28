@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 const Home = () => {
   return (
     <div>
-     <div className='flex '>
+      <p className='text-[5rem] font-[800] italic' >Book Library</p>
+     <div className='flex ml-[40%]'>
         <div>
         <Link to="/display">
             <button className='w-[8rem] h-[3rem] bg-[gray] rounded-full text-[white]'>

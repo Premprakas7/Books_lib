@@ -1,13 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 
  const Addbook = () => {
   const [formData, setFormData] = useState({
     title:"",
-    auhtor:""
+    author:""
   });
-
 
   const handleChange = (e) => {
     const newData = { ...formData };
@@ -16,16 +16,17 @@ import React, { useState } from "react";
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/books", {
+    axios.post("https://books-lib-g2na.onrender.com/books", {
       title: formData.title,
-      auhtor: formData.auhtor
+      author: formData.author
     }).then((res) => {
       console.log(res.data);
     })
   };
   return (
     <div>    
-    <form onSubmit={(e) => handleSubmit(e)} className="border-[5px] w-[20rem] h-[11rem] bg-slate-800 ml-[40%] mt-[12%]">
+      <Link to="/"><button className="w-[8rem] h-[3rem] bg-[gray] rounded-full text-[white]">Home</button></Link>
+    <form onSubmit={(e) => handleSubmit(e)} className="border-[5px] w-[20rem] h-[11rem] bg-slate-800 ml-[38%] mt-[10%]">
       <div >
           <div className=" border-2 ">
           <p className="text-[white] text-[600]">Book Name</p>
